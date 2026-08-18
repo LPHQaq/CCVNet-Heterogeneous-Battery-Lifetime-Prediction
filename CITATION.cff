@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: ccvnet
+message: "If you use this code, please cite the associated manuscript when available."
+type: software
+authors:
+  - family-names: Lai
+    given-names: Peiheng
+version: 0.1.0
+date-released: 2026-08-14
+
+

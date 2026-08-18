@@ -1,0 +1,9 @@
+extends: ../default.yaml
+experiment:
+  name: moe_baseline
+  result_set: ablation
+  description: Metadata-routed CCV baseline comparison.
+  models:
+    - {name: CCV-basic, key: ccv_basic, input_mode: abs, family: ccvnet, plot_group: major, max_epochs: 220, patience: 30, cache_name: ccv_basic_abs}
+    - {name: CCV-meta-MoE, key: ccv_meta_moe, input_mode: abs, family: ccvnet, plot_group: major, max_epochs: 220, patience: 30, cache_name: ccv_meta_moe_abs}
+    - {name: CCV-meta-MoLE, key: ccv_meta_mole, input_mode: abs, family: ccvnet, plot_group: major, max_epochs: 220, patience: 30, cache_name: ccv_meta_mole_abs}

@@ -1,0 +1,81 @@
+extends: ../default.yaml
+experiment:
+  name: small_data
+  result_set: ablation
+  description: Small-data ablation study.
+  cache_name: ablation_small_data
+  required_frames: [overall_metric_df, dataset_metric_df, prediction_df]
+  training_modes: [total split small data, per-dataset small data, fine-group small data]
+  models:
+    - name: SpectrumNN
+      key: spectrumNN
+      input_mode: abs
+      family: neural_cvd
+      plot_group: ablation
+      cache_name: spectrumnn_abs
+    - name: CNN
+      key: cnn
+      input_mode: abs
+      family: neural_cvd
+      plot_group: ablation
+      cache_name: cnn_abs
+    - name: CCV-norm
+      key: ccv_norm
+      input_mode: norm
+      family: ccvnet
+      plot_group: ablation
+      cache_name: ccv_norm
+    - name: CCV-abs-cycleaware
+      key: ccv_abs_cycleaware
+      input_mode: abs
+      family: ccvnet
+      plot_group: ablation
+      cache_name: ccv_abs_cycleaware
+    - name: Descriptor
+      key: descriptor_mlp
+      input_mode: abs
+      family: tabular_ablation
+      plot_group: ablation
+      cache_name: descriptor_abs
+    - name: Descriptor
+      key: descriptor_mlp
+      input_mode: norm
+      family: tabular_ablation
+      plot_group: ablation
+      cache_name: descriptor_norm
+    - name: Spectrum-descriptor
+      key: spectrum_descriptor
+      input_mode: abs
+      family: ccvnet
+      plot_group: ablation
+      cache_name: spectrum_descriptor_abs
+    - name: Spectrum-descriptor
+      key: spectrum_descriptor
+      input_mode: norm
+      family: ccvnet
+      plot_group: ablation
+      cache_name: spectrum_descriptor_norm
+    - name: Spectrum-meta
+      key: spectrum_meta
+      input_mode: abs
+      family: multimodal_ablation
+      plot_group: ablation
+      cache_name: spectrum_meta_abs
+    - name: Spectrum-meta
+      key: spectrum_meta
+      input_mode: norm
+      family: multimodal_ablation
+      plot_group: ablation
+      cache_name: spectrum_meta_norm
+    - name: Descriptor-meta
+      key: descriptor_meta_mlp
+      input_mode: abs
+      family: tabular_ablation
+      plot_group: ablation
+      cache_name: descriptor_meta_abs
+    - name: Descriptor-meta
+      key: descriptor_meta_mlp
+      input_mode: norm
+      family: tabular_ablation
+      plot_group: ablation
+      cache_name: descriptor_meta_norm

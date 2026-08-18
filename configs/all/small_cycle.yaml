@@ -1,0 +1,9 @@
+extends: ../default.yaml
+experiment:
+  name: small_cycle
+  result_set: all
+  description: Major plus ablation early-cycle benchmark.
+  cache_name: all_small_cycle
+  cycle_required_frames: [overall_summary_df, dataset_summary_df, overall_delta_summary_df, dataset_delta_summary_df]
+  attr_required_frames: [overall_summary_df, dataset_summary_df, gap_summary_df]
+

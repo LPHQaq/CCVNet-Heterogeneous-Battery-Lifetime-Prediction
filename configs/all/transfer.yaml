@@ -1,0 +1,6 @@
+extends: ../default.yaml
+experiment:
+  name: transfer
+  result_set: all
+  description: Combined transfer benchmark and ablations in publish layout.
+  cache_name: all_transfer

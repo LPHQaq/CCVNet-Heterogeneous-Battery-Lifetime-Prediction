@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Environments
+.env
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local data and generated outputs
+data/raw/
+data/external/
+data/processed/
+results/
+checkpoints/
+figures/
+
+# Large arrays and model artifacts
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.npz
+*.npy
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+
+# Generated figure exports
+Visualization/Graph/*.tiff

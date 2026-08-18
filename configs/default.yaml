@@ -1,0 +1,52 @@
+project:
+  name: CCVNet
+  full_name: context-aware capacity-voltage network
+  seed: 42
+
+paths:
+  data_dir: data
+  processed_dir: data/processed
+  results_dir: results
+
+data:
+  target_column: life
+  cell_column: cell
+  dataset_column: dataset_name
+  cvd_cycles: [20, 30, 40, 50, 60, 70, 80, 90, 100]
+  descriptor_cycles: [20, 50, 100]
+  cvd_value_key: negative_difference
+  normalized_voltage_points: 200
+
+split:
+  strategy: fine_condition_group_shared
+  dataset_column: dataset_name
+  group_column: fine_condition_group
+  test_fraction: 0.25
+  seeds: [42, 52, 62, 72, 82]
+  protocols: [total split, per-dataset split, fine-group split]
+  backbone: fine-group-consistent backbone
+
+model:
+  name: ccvnet
+  cvd_channels: null
+  descriptor_dim: null
+  embedding_dim: 64
+  hidden_dim: 128
+  dropout: 0.1
+
+training:
+  epochs: 500
+  batch_size: 64
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  patience: 50
+  device: auto
+
+outputs:
+  save_predictions: true
+  save_checkpoints: true
+  save_embeddings: true
+  use_cache: true
+  overwrite_cache: false
+  required_frames: [overall_metric_df, prediction_df]
+

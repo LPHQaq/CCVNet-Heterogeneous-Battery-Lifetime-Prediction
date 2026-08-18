@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ccvnet"
+version = "0.1.0"
+description = "Battery lifetime prediction with voltage-curve and descriptor fusion models."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Lai Peiheng" }
+]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+

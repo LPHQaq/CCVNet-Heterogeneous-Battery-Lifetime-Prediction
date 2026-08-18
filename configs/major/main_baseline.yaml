@@ -1,0 +1,8 @@
+extends: ../default.yaml
+experiment:
+  name: main_baseline
+  result_set: major
+  description: Major benchmark on the full training setting.
+  cache_name: major_main_baseline
+  required_frames: [overall_metric_df, dataset_metric_df, prediction_df, skipped_df]
+

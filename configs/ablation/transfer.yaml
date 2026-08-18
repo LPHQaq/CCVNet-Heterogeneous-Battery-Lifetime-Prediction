@@ -1,0 +1,25 @@
+extends: ../default.yaml
+experiment:
+  name: transfer
+  result_set: ablation
+  description: Few-shot transfer ablations in publish layout.
+  cache_name: ablation_transfer
+  models:
+    - name: Descriptor-local
+      key: mlp
+      input_mode: abs
+      family: transfer
+      plot_group: ablation
+      cache_name: descriptor_local
+    - name: CCV-transfer-meta
+      key: ccv_basic
+      input_mode: abs
+      family: transfer
+      plot_group: ablation
+      cache_name: ccv_transfer_meta
+    - name: CCV-hybrid
+      key: ccv_basic
+      input_mode: abs
+      family: transfer
+      plot_group: ablation
+      cache_name: ccv_hybrid

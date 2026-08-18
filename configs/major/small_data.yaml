@@ -1,0 +1,9 @@
+extends: ../default.yaml
+experiment:
+  name: small_data
+  result_set: major
+  description: Data-scarcity benchmark using reduced training data.
+  cache_name: major_small_data
+  required_frames: [overall_metric_df, dataset_metric_df, prediction_df]
+  training_modes: [total split small data, per-dataset small data, fine-group small data]
+

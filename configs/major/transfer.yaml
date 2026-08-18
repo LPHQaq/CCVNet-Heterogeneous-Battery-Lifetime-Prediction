@@ -1,0 +1,25 @@
+extends: ../default.yaml
+experiment:
+  name: transfer
+  result_set: major
+  description: Main few-shot transfer benchmark in publish layout.
+  cache_name: major_transfer
+  models:
+    - name: SpectrumNN-transfer
+      key: spectrumNN
+      input_mode: norm
+      family: transfer
+      plot_group: major
+      cache_name: spectrumnn_transfer
+    - name: CNN-transfer
+      key: cnn
+      input_mode: norm
+      family: transfer
+      plot_group: major
+      cache_name: cnn_transfer
+    - name: CCV-transfer
+      key: ccv_basic
+      input_mode: abs
+      family: transfer
+      plot_group: major
+      cache_name: ccv_transfer
